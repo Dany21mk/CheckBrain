@@ -54,12 +54,13 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:layout_toLeftOf="@+id/btnSend_chat"
-        android:maxHeight="120dp">
+        >
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/messageField"
-            android:hint="Введите сообщение..."/>
+            android:hint="Введите сообщение..."
+            android:maxHeight="200dp"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <ListView
@@ -72,7 +73,7 @@
         android:divider="@android:color/transparent"
         android:dividerHeight="16dp"
         android:layout_marginBottom="16dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="60dp"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
         android:stackFromBottom="true"

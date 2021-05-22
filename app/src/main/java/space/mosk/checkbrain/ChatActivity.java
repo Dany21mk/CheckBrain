@@ -115,12 +115,12 @@ public class ChatActivity extends AppCompatActivity {
                 params.removeRule(RelativeLayout.ALIGN_PARENT_LEFT);
                 mess_text.setLayoutParams(params);
                 if (model.getUserEmail().equals(FirebaseAuth.getInstance().getCurrentUser().getEmail())){
-                    mess_text.setBackgroundColor(Color.rgb(3, 169, 244));
+                    mess_text.setBackgroundColor(Color.rgb(204, 228, 255));
                     params = (RelativeLayout.LayoutParams) mess_text.getLayoutParams();
                     params.addRule(RelativeLayout.ALIGN_PARENT_RIGHT, RelativeLayout.TRUE);
                     mess_text.setLayoutParams(params);
                 } else {
-                    mess_text.setBackgroundColor(Color.rgb(204, 204,204));
+                    mess_text.setBackgroundColor(Color.rgb(236, 237,241));
                     params = (RelativeLayout.LayoutParams) mess_text.getLayoutParams();
                     params.addRule(RelativeLayout.ALIGN_PARENT_LEFT, RelativeLayout.TRUE);
                     mess_text.setLayoutParams(params);

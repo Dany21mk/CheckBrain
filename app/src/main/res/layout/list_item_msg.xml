@@ -25,10 +25,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/message_user"
         android:layout_marginTop="8dp"
-        android:background="#FF03A9F4"
+        android:background="@drawable/style_msg"
         android:padding="10dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textColor="#fff"
+        android:textColor="@color/text"
         android:textSize="18sp" />
 
 
