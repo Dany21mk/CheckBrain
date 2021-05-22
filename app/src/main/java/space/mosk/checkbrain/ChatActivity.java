@@ -56,7 +56,7 @@ public class ChatActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_chat);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -105,8 +105,6 @@ public class ChatActivity extends AppCompatActivity {
 
         if (FirebaseAuth.getInstance().getCurrentUser() == null){
             startActivityForResult(AuthUI.getInstance().createSignInIntentBuilder().build(), SIGN_IN_CODE);
-        } else {
-            Snackbar.make(activity_chat, "Вы авторизованы", Snackbar.LENGTH_SHORT).show();
         }
         dispalyAllMessages();
     }
@@ -143,6 +141,7 @@ public class ChatActivity extends AppCompatActivity {
                 mess_text.setText(model.getTextMessage());
             }
         };
+
 
         list_of_msgs.setAdapter(adapter);
 
