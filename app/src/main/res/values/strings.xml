@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">CheckBrain</string>
+    <string name="app_name_after">Educational App</string>
+    <string name="text_bottom">Обучайтесь вместе с CheckBrain</string>
+    <string name="btn_auth">Войти</string>
+    <string name="btn_reg">Зарегистрироваться</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="task">Задание</string>
+    <string name="back">Назад</string>
+    <string name="levelonemath">Выбери цифру, которая больше. Уровень 1</string>
+    <string name="text_continue">Продолжить</string>
+</resources>

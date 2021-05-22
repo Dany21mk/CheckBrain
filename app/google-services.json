@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "469855922324",
+    "project_id": "checkbrain-aaf80",
+    "storage_bucket": "checkbrain-aaf80.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:469855922324:android:40e5248470ef74479eec81",
+        "android_client_info": {
+          "package_name": "space.mosk.checkbrain"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "469855922324-5q1um7hcs8thunrk38a2j5i9l6s9en0h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "space.mosk.checkbrain",
+            "certificate_hash": "cc9f2fc90933394ae071dc0b5cbb294b5963bf5d"
+          }
+        },
+        {
+          "client_id": "469855922324-t80k2guiv3pin8fm6152pnnsce17dn7k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLFKHUtoCvS3QpuhsPnkLK3rbka3tDmFg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "469855922324-t80k2guiv3pin8fm6152pnnsce17dn7k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
