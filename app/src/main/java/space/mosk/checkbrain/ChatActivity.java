@@ -1,19 +1,12 @@
 package space.mosk.checkbrain;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.ContextThemeWrapper;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,7 +17,6 @@ import android.widget.TextView;
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.database.FirebaseListAdapter;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -33,9 +25,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import android.text.format.DateFormat;
-import android.widget.Toast;
 
-import space.mosk.checkbrain.Math.MathActivity;
 import space.mosk.checkbrain.Models.Message;
 
 public class ChatActivity extends AppCompatActivity {
@@ -106,13 +96,13 @@ public class ChatActivity extends AppCompatActivity {
         if (FirebaseAuth.getInstance().getCurrentUser() == null){
             startActivityForResult(AuthUI.getInstance().createSignInIntentBuilder().build(), SIGN_IN_CODE);
         }
-        dispalyAllMessages();
+        displayAllMessages();
     }
 
-    private void dispalyAllMessages() {
+    private void displayAllMessages() {
         ListView list_of_msgs = findViewById(R.id.list_of_messages);
 
-        adapter = new FirebaseListAdapter<Message>(this, Message.class, R.layout.list_item_msg, database.getReference()) {
+        adapter = new FirebaseListAdapter<Message>(this, Message.class, R.layout.list_item_msg, database.getReference("Chat")) {
             @Override
             protected void populateView(View v, Message model, int position) {
                 TextView mess_user, mess_time, mess_text;
