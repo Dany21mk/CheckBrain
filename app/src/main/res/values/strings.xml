@@ -10,5 +10,6 @@
     <string name="task">Задание</string>
     <string name="back">Назад</string>
     <string name="levelonemath">Уровень 1. Выбери цифру, которая больше</string>
+    <string name="leveltwomath">Уровень 2. Сложение и вычитание натуральных чисел в пределах от 5 до 20</string>
     <string name="text_continue">Продолжить</string>
 </resources>

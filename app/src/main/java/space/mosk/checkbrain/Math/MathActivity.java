@@ -92,5 +92,21 @@ public class MathActivity extends AppCompatActivity {
                 startActivity(new Intent(MathActivity.this, Level1MathActivity.class));
             }
         });
+
+        TextView textView2 = findViewById(R.id.textMathView2);
+        textView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MathActivity.this, Level2MathActivity.class));
+            }
+        });
+
+        TextView textView3 = findViewById(R.id.textMathView3);
+        textView3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MathActivity.this, Level3MathActivity.class));
+            }
+        });
     }
 }
