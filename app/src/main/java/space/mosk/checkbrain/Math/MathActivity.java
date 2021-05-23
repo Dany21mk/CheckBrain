@@ -19,6 +19,7 @@ import space.mosk.checkbrain.AuthActivity;
 import space.mosk.checkbrain.DashBoard;
 import space.mosk.checkbrain.MainActivity;
 import space.mosk.checkbrain.R;
+import space.mosk.checkbrain.TestsActivity;
 
 public class MathActivity extends AppCompatActivity {
 
@@ -61,6 +62,10 @@ public class MathActivity extends AppCompatActivity {
                         return true;
                     case R.id.account:
                         startActivity(new Intent(getApplicationContext(), AccountActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.tests:
+                        startActivity(new Intent(getApplicationContext(), TestsActivity.class));
                         overridePendingTransition(0,0);
                         return true;
                 }

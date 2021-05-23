@@ -95,6 +95,10 @@ public class AccountActivity extends AppCompatActivity {
                         return true;
                     case R.id.account:
                         return true;
+                    case R.id.tests:
+                        startActivity(new Intent(getApplicationContext(), TestsActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
                 }
                 return false;
             }

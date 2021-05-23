@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:layout_gravity="center"
     android:layout_margin="10dp"
-    android:background="#eee"
+    android:background="#fff"
     android:orientation="vertical">
 
     <LinearLayout
@@ -14,16 +14,6 @@
         android:gravity="center"
         android:orientation="vertical"
         android:padding="20dp">
-
-        <TextView
-            android:id="@+id/btn_close"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_gravity="end"
-            android:background="@drawable/btn_ripple_menu"
-            android:gravity="center"
-            android:text="X"
-            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/previewimg"
@@ -45,10 +35,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="25dp"
-            android:background="@drawable/btn_ripple_auth"
             android:fontFamily="@font/montserrat"
             android:text="@string/text_continue"
-            android:textColor="@color/white" />
+            android:textColor="@color/text" />
     </LinearLayout>
 
 </RelativeLayout>

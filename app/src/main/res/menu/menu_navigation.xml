@@ -11,6 +11,11 @@
         android:background="@drawable/btn_ripple_menu"
         android:icon="@drawable/ic_dashboard"/>
     <item
+        android:id="@+id/tests"
+        android:title="Тесты"
+        android:background="@drawable/btn_ripple_menu"
+        android:icon="@drawable/ic_school"/>
+    <item
         android:id="@+id/account"
         android:title="Профиль"
         android:background="@drawable/btn_ripple_menu"

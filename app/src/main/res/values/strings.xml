@@ -9,6 +9,6 @@
 
     <string name="task">Задание</string>
     <string name="back">Назад</string>
-    <string name="levelonemath">Выбери цифру, которая больше. Уровень 1</string>
+    <string name="levelonemath">Уровень 1. Выбери цифру, которая больше</string>
     <string name="text_continue">Продолжить</string>
 </resources>

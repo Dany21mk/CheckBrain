@@ -1,6 +1,7 @@
 package space.mosk.checkbrain;
 
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -12,6 +13,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.webkit.JsResult;
 import android.webkit.ValueCallback;
@@ -25,6 +27,8 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 import android.annotation.TargetApi;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import space.mosk.checkbrain.Math.MathActivity;
 
@@ -98,7 +102,34 @@ public class TestsActivity extends AppCompatActivity {
             }
 
         });
-        webView.loadUrl("https://checkbrain.ru");
+        webView.loadUrl("https://checkbrain.ru/tests/");
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+
+        bottomNavigationView.setSelectedItemId(R.id.tests);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.dashboard:
+                        startActivity(new Intent(getApplicationContext(), DashBoard.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.home:
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.account:
+                        startActivity(new Intent(getApplicationContext(), AccountActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.tests:
+                        return true;
+                }
+                return false;
+            }
+        });
 
     }
 

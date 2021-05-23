@@ -72,6 +72,10 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(), AccountActivity.class));
                         overridePendingTransition(0,0);
                         return true;
+                    case R.id.tests:
+                        startActivity(new Intent(getApplicationContext(), TestsActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
                 }
                 return false;
             }
