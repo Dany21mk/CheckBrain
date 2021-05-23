@@ -74,14 +74,6 @@ public class Level1MathActivity extends AppCompatActivity {
         dialog.setContentView(R.layout.previewdialog);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
-        TextView btn_close = dialog.findViewById(R.id.btn_close);
-        btn_close.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dialog.dismiss();
-            }
-        });
-
         Button btn_continue = dialog.findViewById(R.id.btn_continue);
         btn_continue.setOnClickListener(new View.OnClickListener() {
             @Override
