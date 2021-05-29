@@ -24,7 +24,7 @@ import java.util.Random;
 import space.mosk.checkbrain.AuthActivity;
 import space.mosk.checkbrain.R;
 
-public class Level3MathActivity extends AppCompatActivity {
+public class Level4MathActivity extends AppCompatActivity {
 
     Button btn_back;
     Dialog dialog;
@@ -46,7 +46,7 @@ public class Level3MathActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose2);
         if (FirebaseAuth.getInstance().getCurrentUser() == null){
-            startActivity(new Intent(Level3MathActivity.this, AuthActivity.class));
+            startActivity(new Intent(Level4MathActivity.this, AuthActivity.class));
             finish();
         }
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
@@ -55,7 +55,7 @@ public class Level3MathActivity extends AppCompatActivity {
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Level3MathActivity.this, MathActivity.class));
+                startActivity(new Intent(Level4MathActivity.this, MathActivity.class));
                 overridePendingTransition(0,0);
             }
         });
@@ -119,7 +119,7 @@ public class Level3MathActivity extends AppCompatActivity {
                         handlerProgress(false);
                     }
                     if (counter>=20){
-                        Toast.makeText(Level3MathActivity.this, "Конец игры", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Level4MathActivity.this, "Конец игры", Toast.LENGTH_SHORT).show();
                     } else {
                         handler();
                         clearBtn(true);
@@ -163,7 +163,7 @@ public class Level3MathActivity extends AppCompatActivity {
                         handlerProgress(false);
                     }
                     if (counter>=20){
-                        Toast.makeText(Level3MathActivity.this, "Конец игры", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Level4MathActivity.this, "Конец игры", Toast.LENGTH_SHORT).show();
                     } else {
                         handler();
                         clearBtn(true);
@@ -207,7 +207,7 @@ public class Level3MathActivity extends AppCompatActivity {
                         handlerProgress(false);
                     }
                     if (counter>=20){
-                        Toast.makeText(Level3MathActivity.this, "Конец игры", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Level4MathActivity.this, "Конец игры", Toast.LENGTH_SHORT).show();
                     } else {
                         handler();
                         clearBtn(true);
@@ -251,7 +251,7 @@ public class Level3MathActivity extends AppCompatActivity {
                         handlerProgress(false);
                     }
                     if (counter>=20){
-                        Toast.makeText(Level3MathActivity.this, "Конец игры", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Level4MathActivity.this, "Конец игры", Toast.LENGTH_SHORT).show();
                     } else {
                         handler();
                         clearBtn(true);
@@ -295,8 +295,8 @@ public class Level3MathActivity extends AppCompatActivity {
         tv = findViewById(R.id.task);
         num1 = rnd(1, 10);
         num2 = rnd(1, 10);
-        ans = num1 * num2;
-        tv.setText(new StringBuilder().append(num1).append(" ⋅ ").append(num2).toString());
+        ans = num2;
+        tv.setText(new StringBuilder().append(num1*num2).append(" : ").append(num1).toString());
         for (int i = 0; i < answers.length; i++) {
             answers[i] = -1;
         }

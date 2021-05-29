@@ -301,7 +301,7 @@ public class Level2MathActivity extends AppCompatActivity {
             tv.setText(new StringBuilder().append(num1).append(" + ").append(num2).toString());
         } else {
             num1 = rnd(1, 19);
-            num2 = rnd(0, num1);
+            num2 = rnd(num1, 20);
             ans = num2 - num1;
             tv.setText(new StringBuilder().append(num2).append(" - ").append(num1).toString());
         }
