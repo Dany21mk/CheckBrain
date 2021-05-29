@@ -41,8 +41,6 @@ public class Level3MathActivity extends AppCompatActivity {
     public final int[] progress = {R.id.point1,R.id.point2,R.id.point3,R.id.point4,R.id.point5,R.id.point6,R.id.point7,R.id.point8,R.id.point9,R.id.point10,R.id.point11,R.id.point12,R.id.point13,R.id.point14,R.id.point15,R.id.point16,R.id.point17,R.id.point18,R.id.point19,R.id.point20};
     TextView tv;
 
-    ArrayList<String> mas = new ArrayList<>();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -299,45 +297,11 @@ public class Level3MathActivity extends AppCompatActivity {
         if (rand == 0){
             num1 = rnd(1, 20);
             num2 = rnd(1, 20);
-            int countIter = 0;
-            for (int i = 0; i < mas.size(); i++) {
-                if (mas.get(i).equals(num1 + "+" + num2)){
-                    countIter++;
-                }
-            }
-            while (countIter != 0){
-                countIter = 0;
-                num1 = rnd(1, 20);
-                num2 = rnd(1, 20);
-                for (int i = 0; i < mas.size(); i++) {
-                    if (mas.get(i).equals(num1 + "+" + num2)){
-                        countIter++;
-                    }
-                }
-            }
-            mas.add(num1 + "+" + num2);
             ans = num1 + num2;
             tv.setText(new StringBuilder().append(num1).append(" + ").append(num2).toString());
         } else {
             num1 = rnd(1, 19);
             num2 = rnd(num1, 20);
-            int countIter = 0;
-            for (int i = 0; i < mas.size(); i++) {
-                if (mas.get(i).equals(num1 + "-" + num2)){
-                    countIter++;
-                }
-            }
-            while (countIter != 0){
-                countIter = 0;
-                num1 = rnd(1, 20);
-                num2 = rnd(1, 20);
-                for (int i = 0; i < mas.size(); i++) {
-                    if (mas.get(i).equals(num1 + "-" + num2)){
-                        countIter++;
-                    }
-                }
-            }
-            mas.add(num1 + "-" + num2);
             ans = num2 - num1;
             tv.setText(new StringBuilder().append(num2).append(" - ").append(num1).toString());
         }
