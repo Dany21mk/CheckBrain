@@ -101,7 +101,15 @@ public class MathActivity extends AppCompatActivity {
             }
         });
 
-        TextView textView4 = findViewById(R.id.textMathView3);
+        TextView textView3 = findViewById(R.id.textMathView3);
+        textView3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MathActivity.this, Level3MathActivity.class));
+            }
+        });
+
+        TextView textView4 = findViewById(R.id.textMathView4);
         textView4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -112,7 +120,7 @@ public class MathActivity extends AppCompatActivity {
         textView5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MathActivity.this, Level4MathActivity.class));
+                startActivity(new Intent(MathActivity.this, Level5MathActivity.class));
             }
         });
     }
