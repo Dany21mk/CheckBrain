@@ -12,4 +12,14 @@
     <string name="levelonemath">Уровень 1. Выбери цифру, которая больше</string>
     <string name="leveltwomath">Уровень 2. Сложение и вычитание натуральных чисел в пределах от 5 до 20</string>
     <string name="text_continue">Продолжить</string>
+    <string name="levelthreemath">Уровень 3. Таблица умножения</string>
+    <string name="levelfourmath">Уровень 4. Деление целых чисел в пределах таблицы умножения</string>
+    <string name="levelfivemath">Уровень 5. Сложение и вычитание натуральных чисел в пределах от 5 до 50</string>
+    <string name="levelsixmath">Уровень 6. Сложение и вычитание натуральных чисел в пределах от -20 до 20</string>
+    <string name="levelsevenmath">Уровень 7. Деление и умножение целых чисел в пределах ±таблицы умножения</string>
+    <string name="leveleightmath">Уровень 8. Умножение двузначного числа на 11</string>
+    <string name="levelninemath">Уровень 9. Возведение в квдарат в пределах от 1 до 30</string>
+    <string name="leveltenmath">Уровень 10. Проверка знаний по сложению и вычитанию чисел</string>
+    <string name="levelelevenmath">Уровень 11. Проверка знаний по таблице умнажения</string>
+    <string name="leveltwelvemath">Уровень 12. Проверка знаний</string>
 </resources>

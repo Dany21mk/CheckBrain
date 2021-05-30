@@ -65,7 +65,7 @@ public class Level5MathActivity extends AppCompatActivity {
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.previewdialog);
         TextView tx = dialog.findViewById(R.id.textTask);
-        tx.setText(R.string.leveltwomath);
+        tx.setText(R.string.levelfivemath);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         Button btn_continue = dialog.findViewById(R.id.btn_continue);

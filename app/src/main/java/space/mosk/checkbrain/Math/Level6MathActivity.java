@@ -65,7 +65,7 @@ public class Level6MathActivity extends AppCompatActivity {
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.previewdialog);
         TextView tx = dialog.findViewById(R.id.textTask);
-        tx.setText(R.string.leveltwomath);
+        tx.setText(R.string.levelsixmath);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         Button btn_continue = dialog.findViewById(R.id.btn_continue);
@@ -298,12 +298,20 @@ public class Level6MathActivity extends AppCompatActivity {
             num1 = rnd(-20, 20);
             num2 = rnd(-20, 20);
             ans = num1 + num2;
-            tv.setText(new StringBuilder().append(num1).append(" + ").append(num2).toString());
+            if (num2 < 0){
+                tv.setText(new StringBuilder().append(num1).append(" + (").append(num2).append(")").toString());
+            } else{
+                tv.setText(new StringBuilder().append(num1).append(" + ").toString());
+            }
         } else {
             num1 = rnd(-20, 20);
             num2 = rnd(-20, 20);
             ans = num2 - num1;
-            tv.setText(new StringBuilder().append(num2).append(" - ").append(num1).toString());
+            if (num1 < 0){
+                tv.setText(new StringBuilder().append(num2).append(" - (").append(num1).append(")").toString());
+            } else{
+                tv.setText(new StringBuilder().append(num2).append(" - ").append(num1).toString());
+            }
         }
         for (int i = 0; i < answers.length; i++) {
             answers[i] = -1;

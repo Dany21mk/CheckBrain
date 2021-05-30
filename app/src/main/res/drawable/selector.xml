@@ -3,7 +3,7 @@
 
     <item
         android:state_selected="true"
-        android:color="#009688"
+        android:color="@color/btn_ripple_reg"
        />
 
     <item

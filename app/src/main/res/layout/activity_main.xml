@@ -17,7 +17,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="#009688"
+            android:background="@color/btn_ripple_reg"
             app:popupTheme="@style/Theme.CheckBrain.PopupOverlay">
 
         </androidx.appcompat.widget.Toolbar>
