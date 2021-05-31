@@ -1,6 +1,4 @@
-package space.mosk.checkbrain.Math;
-
-import androidx.appcompat.app.AppCompatActivity;
+package space.mosk.checkbrain.Geog;
 
 import android.app.Dialog;
 import android.content.Intent;
@@ -12,42 +10,44 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.auth.FirebaseAuth;
 
-import java.util.ArrayList;
 import java.util.Random;
 
+import space.mosk.checkbrain.Array;
 import space.mosk.checkbrain.AuthActivity;
 import space.mosk.checkbrain.ChooseTrue.ChooseTrueActivity;
 import space.mosk.checkbrain.R;
 
-public class Level5MathActivity extends AppCompatActivity {
+public class Level4GeogActivity extends AppCompatActivity {
 
     Button btn_back;
     Dialog dialog;
     public int counter = 0;
-    public int num1, num2, ans;
-    Random random = new Random();
     public TextView ans_1;
     public TextView ans_2;
     public TextView ans_3;
     public TextView ans_4;
+    Array array = new Array();
+    public String ans = "";
 
     public int rand = 0;
-    public int answers[] = {-1, -1, -1, -1};
+    public String answers[] = {"", "", "", ""};
     public final int[] progress = {R.id.point1,R.id.point2,R.id.point3,R.id.point4,R.id.point5,R.id.point6,R.id.point7,R.id.point8,R.id.point9,R.id.point10,R.id.point11,R.id.point12,R.id.point13,R.id.point14,R.id.point15,R.id.point16,R.id.point17,R.id.point18,R.id.point19,R.id.point20};
     TextView tv;
+    Random random = new Random();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose2);
         if (FirebaseAuth.getInstance().getCurrentUser() == null){
-            startActivity(new Intent(Level5MathActivity.this, AuthActivity.class));
+            startActivity(new Intent(Level4GeogActivity.this, AuthActivity.class));
             finish();
         }
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
@@ -56,7 +56,7 @@ public class Level5MathActivity extends AppCompatActivity {
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Level5MathActivity.this, MathActivity.class));
+                startActivity(new Intent(Level4GeogActivity.this, GeogActivity.class));
                 overridePendingTransition(0,0);
             }
         });
@@ -66,7 +66,7 @@ public class Level5MathActivity extends AppCompatActivity {
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.previewdialog);
         TextView tx = dialog.findViewById(R.id.textTask);
-        tx.setText(R.string.levelfivemath);
+        tx.setText("Америка");
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         Button btn_continue = dialog.findViewById(R.id.btn_continue);
@@ -85,6 +85,12 @@ public class Level5MathActivity extends AppCompatActivity {
         ans_2 = findViewById(R.id.ans_2);
         ans_3 = findViewById(R.id.ans_3);
         ans_4 = findViewById(R.id.ans_4);
+
+        ans_1.setTextSize(25);
+        ans_2.setTextSize(25);
+        ans_3.setTextSize(25);
+        ans_4.setTextSize(25);
+
 
         handler();
 
@@ -293,21 +299,12 @@ public class Level5MathActivity extends AppCompatActivity {
     }
 
     public void handler() {
-        rand = random.nextInt(2);
+        rand = random.nextInt(array.america.length);
         tv = findViewById(R.id.task);
-        if (rand == 0){
-            num1 = rnd(5, 50);
-            num2 = rnd(5, 50);
-            ans = num1 + num2;
-            tv.setText(new StringBuilder().append(num1).append(" + ").append(num2).toString());
-        } else {
-            num1 = rnd(5, 49);
-            num2 = rnd(num1, 50);
-            ans = num2 - num1;
-            tv.setText(new StringBuilder().append(num2).append(" - ").append(num1).toString());
-        }
+        ans = array.americaAnswer[rand];
+        tv.setText(array.america[rand]);
         for (int i = 0; i < answers.length; i++) {
-            answers[i] = -1;
+            answers[i] = "";
         }
         rand = random.nextInt(4);
         answers[rand] = ans;
@@ -316,11 +313,7 @@ public class Level5MathActivity extends AppCompatActivity {
             if (rand == i){
                 continue;
             }
-            if (ans > 5){
-                answers[i] = rnd((ans-5), (ans+5));
-            } else{
-                answers[i] = rnd((ans), (ans+7));
-            }
+            answers[i] = array.americaAnswer[rand];
             for (int j = 0; j < answers.length; j++) {
                 if (answers[i] == answers[j]){
                     count++;
@@ -328,11 +321,8 @@ public class Level5MathActivity extends AppCompatActivity {
             }
             while (count > 1){
                 count = 0;
-                if (ans > 5){
-                    answers[i] = rnd((ans-5), (ans+5));
-                } else{
-                    answers[i] = rnd((ans), (ans+7));
-                }
+                int rnd  = random.nextInt(4);
+                answers[i] = array.americaAnswer[rnd];
                 for (int j = 0; j < answers.length; j++) {
                     if (answers[i] == answers[j]){
                         count++;
@@ -340,17 +330,12 @@ public class Level5MathActivity extends AppCompatActivity {
                 }
             }
         }
-        ans_1.setText(new StringBuilder().append(answers[0]).toString());
-        ans_2.setText(new StringBuilder().append(answers[1]).toString());
-        ans_3.setText(new StringBuilder().append(answers[2]).toString());
-        ans_4.setText(new StringBuilder().append(answers[3]).toString());
+        ans_1.setText(answers[0]);
+        ans_2.setText(answers[1]);
+        ans_3.setText(answers[2]);
+        ans_4.setText(answers[3]);
     }
 
-    public static int rnd(int min, int max)
-    {
-        max -= min;
-        return (int) (Math.random() * ++max) + min;
-    }
     public void clearBtn(boolean bool){
         if (bool){
             ans_1.setEnabled(true);
@@ -378,7 +363,7 @@ public class Level5MathActivity extends AppCompatActivity {
         btn_continue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Level5MathActivity.this, ChooseTrueActivity.class));
+                startActivity(new Intent(Level4GeogActivity.this, ChooseTrueActivity.class));
                 finish();
             }
         });

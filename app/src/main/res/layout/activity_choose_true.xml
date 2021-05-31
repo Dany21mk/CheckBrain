@@ -52,7 +52,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Европа"
+                    android:text="Уровень 1"
                     android:padding="10dp"
                     android:textSize="18sp"
                     android:textColor="@color/white"
@@ -67,7 +67,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Азия"
+                    android:text="Уровень 2"
                     android:padding="10dp"
                     android:textSize="18sp"
                     android:textColor="@color/white"
@@ -82,7 +82,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Африка"
+                    android:text="Уровень 3"
                     android:padding="10dp"
                     android:textSize="18sp"
                     android:textColor="@color/white"
@@ -97,7 +97,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Америка"
+                    android:text="Уровень 4"
                     android:padding="10dp"
                     android:textSize="18sp"
                     android:textColor="@color/white"
@@ -112,7 +112,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Австралия"
+                    android:text="Уровень 5"
                     android:padding="10dp"
                     android:textSize="18sp"
                     android:textColor="@color/white"
@@ -123,36 +123,6 @@
                     android:layout_marginBottom="10dp"
                     android:layout_marginTop="10dp"
                     android:id="@+id/textMathView5"
-                    />
-
-                <TextView
-                    android:id="@+id/textMathView6"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:background="@drawable/btn_gamelevels"
-                    android:padding="10dp"
-                    android:text="Популярные столицы"
-                    android:textColor="@color/white"
-                    android:textSize="18sp" />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Проверка знаний"
-                    android:padding="10dp"
-                    android:textSize="18sp"
-                    android:textColor="@color/white"
-                    android:background="@drawable/btn_gamelevels"
-                    android:layout_gravity="center"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginTop="10dp"
-                    android:id="@+id/textMathView7"
                     />
             </LinearLayout>
         </ScrollView>

@@ -1,4 +1,4 @@
-package space.mosk.checkbrain.Capitals;
+package space.mosk.checkbrain.Geog;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,17 +18,6 @@ import space.mosk.checkbrain.AccountActivity;
 import space.mosk.checkbrain.AuthActivity;
 import space.mosk.checkbrain.DashBoard;
 import space.mosk.checkbrain.MainActivity;
-import space.mosk.checkbrain.Math.Level10MathActivity;
-import space.mosk.checkbrain.Math.Level11MathActivity;
-import space.mosk.checkbrain.Math.Level1MathActivity;
-import space.mosk.checkbrain.Math.Level2MathActivity;
-import space.mosk.checkbrain.Math.Level3MathActivity;
-import space.mosk.checkbrain.Math.Level4MathActivity;
-import space.mosk.checkbrain.Math.Level5MathActivity;
-import space.mosk.checkbrain.Math.Level6MathActivity;
-import space.mosk.checkbrain.Math.Level7MathActivity;
-import space.mosk.checkbrain.Math.Level8MathActivity;
-import space.mosk.checkbrain.Math.Level9MathActivity;
 import space.mosk.checkbrain.R;
 import space.mosk.checkbrain.TestsActivity;
 

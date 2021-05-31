@@ -11,52 +11,127 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CheckBrain">
-        <activity android:name=".Math.Level2MathActivity" android:screenOrientation="portrait">
+        <activity android:name=".ChooseTrue.ChooseTrueActivity" android:screenOrientation="portrait"><intent-filter>
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter></activity>
+
+        <activity android:name=".Geog.Level1GeogActivity" android:screenOrientation="portrait"><intent-filter><category android:name="android.intent.category.LAUNCHER" /></intent-filter></activity>
+        <activity android:name=".ChooseTrue.Level1ChooseTrueActivity" android:screenOrientation="portrait"><intent-filter><category android:name="android.intent.category.LAUNCHER" /></intent-filter></activity>
+        <activity
+            android:name=".Geog.Level2GeogActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Math.Level3MathActivity" android:screenOrientation="portrait">
+        <activity
+            android:name=".Geog.Level3GeogActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Math.Level4MathActivity" android:screenOrientation="portrait">
+        <activity
+            android:name=".Geog.Level4GeogActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Math.Level5MathActivity" android:screenOrientation="portrait">
+        <activity
+            android:name=".Geog.Level5GeogActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Math.Level6MathActivity" android:screenOrientation="portrait">
+        <activity
+            android:name=".Geog.Level6GeogActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Math.Level7MathActivity" android:screenOrientation="portrait">
+        <activity
+            android:name=".Geog.Level7GeogActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Math.Level8MathActivity" android:screenOrientation="portrait">
+        <activity
+            android:name=".Math.Level2MathActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Math.Level9MathActivity" android:screenOrientation="portrait">
+        <activity
+            android:name=".Math.Level3MathActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Math.Level10MathActivity" android:screenOrientation="portrait">
+        <activity
+            android:name=".Math.Level4MathActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Math.Level11MathActivity" android:screenOrientation="portrait">
+        <activity
+            android:name=".Math.Level5MathActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Math.Level6MathActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Math.Level7MathActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Math.Level8MathActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Math.Level9MathActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Math.Level10MathActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Math.Level11MathActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Math.Level12MathActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
@@ -79,6 +154,13 @@
         </activity>
         <activity
             android:name=".Math.MathActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Geog.GeogActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />

@@ -21,6 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import java.util.Random;
 
 import space.mosk.checkbrain.AuthActivity;
+import space.mosk.checkbrain.ChooseTrue.ChooseTrueActivity;
 import space.mosk.checkbrain.MainActivity;
 import space.mosk.checkbrain.Math.Level9MathActivity;
 import space.mosk.checkbrain.R;
@@ -114,7 +115,7 @@ public class Level10MathActivity extends AppCompatActivity {
                 handlerProgress(false);
             }
             if (counter>=20){
-                Toast.makeText(Level10MathActivity.this, "Конец игры", Toast.LENGTH_SHORT).show();
+                gameover();
                 return;
             }
             new Handler().postDelayed(new Runnable() {
@@ -202,5 +203,26 @@ public class Level10MathActivity extends AppCompatActivity {
                 tvPr.setBackgroundResource(R.drawable.style_points_true);
             }
         }
+    }
+    public void gameover(){
+        // Вызов dialog
+        dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.previewdialog);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.setCancelable(false);
+        TextView tx = dialog.findViewById(R.id.textTask);
+        tx.setText("Уровень успешно пройден");
+        Button btn_continue = dialog.findViewById(R.id.btn_continue);
+        btn_continue.setText("Выйти в меню");
+        btn_continue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Level10MathActivity.this, ChooseTrueActivity.class));
+                finish();
+            }
+        });
+
+        dialog.show();
     }
 }

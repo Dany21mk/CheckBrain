@@ -1,4 +1,4 @@
-package space.mosk.checkbrain.Math;
+package space.mosk.checkbrain.ChooseTrue;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,22 +17,25 @@ import com.google.firebase.auth.FirebaseAuth;
 import space.mosk.checkbrain.AccountActivity;
 import space.mosk.checkbrain.AuthActivity;
 import space.mosk.checkbrain.DashBoard;
+import space.mosk.checkbrain.Geog.Level2GeogActivity;
+import space.mosk.checkbrain.Geog.Level3GeogActivity;
+import space.mosk.checkbrain.Geog.Level4GeogActivity;
+import space.mosk.checkbrain.Geog.Level5GeogActivity;
 import space.mosk.checkbrain.MainActivity;
 import space.mosk.checkbrain.R;
 import space.mosk.checkbrain.TestsActivity;
 
-public class MathActivity extends AppCompatActivity {
+public class ChooseTrueActivity extends AppCompatActivity {
 
     Button btn_back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_math);
-
+        setContentView(R.layout.activity_choose_true);
         // проверка авторизации пользователя
         if (FirebaseAuth.getInstance().getCurrentUser() == null){
-            startActivity(new Intent(MathActivity.this, AuthActivity.class));
+            startActivity(new Intent(ChooseTrueActivity.this, AuthActivity.class));
             finish();
         }
 
@@ -79,7 +82,7 @@ public class MathActivity extends AppCompatActivity {
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MathActivity.this, MainActivity.class));
+                startActivity(new Intent(ChooseTrueActivity.this, MainActivity.class));
                 overridePendingTransition(0,0);
             }
         });
@@ -89,7 +92,7 @@ public class MathActivity extends AppCompatActivity {
         textView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MathActivity.this, Level1MathActivity.class));
+                startActivity(new Intent(ChooseTrueActivity.this, Level1ChooseTrueActivity.class));
             }
         });
 
@@ -97,7 +100,7 @@ public class MathActivity extends AppCompatActivity {
         textView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MathActivity.this, Level2MathActivity.class));
+                startActivity(new Intent(ChooseTrueActivity.this, Level2GeogActivity.class));
             }
         });
 
@@ -105,7 +108,7 @@ public class MathActivity extends AppCompatActivity {
         textView3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MathActivity.this, Level3MathActivity.class));
+                startActivity(new Intent(ChooseTrueActivity.this, Level3GeogActivity.class));
             }
         });
 
@@ -113,63 +116,14 @@ public class MathActivity extends AppCompatActivity {
         textView4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MathActivity.this, Level4MathActivity.class));
+                startActivity(new Intent(ChooseTrueActivity.this, Level4GeogActivity.class));
             }
         });
         TextView textView5 = findViewById(R.id.textMathView5);
         textView5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MathActivity.this, Level5MathActivity.class));
-            }
-        });
-        TextView textView6 = findViewById(R.id.textMathView6);
-        textView6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MathActivity.this, Level6MathActivity.class));
-            }
-        });
-        TextView textView7 = findViewById(R.id.textMathView7);
-        textView7.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MathActivity.this, Level7MathActivity.class));
-            }
-        });
-        TextView textView8 = findViewById(R.id.textMathView8);
-        textView8.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MathActivity.this, Level8MathActivity.class));
-            }
-        });
-        TextView textView9 = findViewById(R.id.textMathView9);
-        textView9.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MathActivity.this, Level9MathActivity.class));
-            }
-        });
-        TextView textView10 = findViewById(R.id.textMathView10);
-        textView10.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MathActivity.this, Level10MathActivity.class));
-            }
-        });
-        TextView textView11 = findViewById(R.id.textMathView11);
-        textView11.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MathActivity.this, Level11MathActivity.class));
-            }
-        });
-        TextView textView12 = findViewById(R.id.textMathView12);
-        textView12.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MathActivity.this, Level12MathActivity.class));
+                startActivity(new Intent(ChooseTrueActivity.this, Level5GeogActivity.class));
             }
         });
     }

@@ -24,7 +24,7 @@ import space.mosk.checkbrain.AuthActivity;
 import space.mosk.checkbrain.ChooseTrue.ChooseTrueActivity;
 import space.mosk.checkbrain.R;
 
-public class Level11MathActivity extends AppCompatActivity {
+public class Level12MathActivity extends AppCompatActivity {
 
     Button btn_back;
     TextView taskText;
@@ -43,7 +43,7 @@ public class Level11MathActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_check_math);
         if (FirebaseAuth.getInstance().getCurrentUser() == null){
-            startActivity(new Intent(Level11MathActivity.this, AuthActivity.class));
+            startActivity(new Intent(Level12MathActivity.this, AuthActivity.class));
             finish();
         }
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
@@ -51,7 +51,7 @@ public class Level11MathActivity extends AppCompatActivity {
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Level11MathActivity.this, MathActivity.class));
+                startActivity(new Intent(Level12MathActivity.this, MathActivity.class));
                 overridePendingTransition(0,0);
             }
         });
@@ -61,7 +61,7 @@ public class Level11MathActivity extends AppCompatActivity {
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.previewdialog);
         TextView tx = dialog.findViewById(R.id.textTask);
-        tx.setText(R.string.levelelevenmath);
+        tx.setText("Провекра знаний");
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         Button btn_continue = dialog.findViewById(R.id.btn_continue);
@@ -156,7 +156,7 @@ public class Level11MathActivity extends AppCompatActivity {
 
     public void update() {
         taskText = (TextView)findViewById(R.id.task);
-        rand = random.nextInt(2);
+        rand = random.nextInt(6);
         if (rand == 0){
             num1 = 0;
             num2 = 0;
@@ -172,7 +172,37 @@ public class Level11MathActivity extends AppCompatActivity {
             } else{
                 taskText.setText(num1 + " ⋅ " + num2 + " = ");
             }
-        } else {
+        } else if (rand == 1){
+            num1 = getRandom(-50, 50);
+            num2 = getRandom(-50, 50);
+            ans = num1 + num2;
+            if (num1 < 0){
+                taskText.setText(num1 + " + (" + num2 + ") = ");
+            }else {
+                taskText.setText(num1 + " + " + num2 + " = ");
+            }
+        }
+        else if (rand == 2){
+            num1 = getRandom(-50, 50);
+            num2 = getRandom(-50, 50);
+            ans = num2 - num1;
+            if (num1 < 0){
+                taskText.setText(num2 + " - (" + num1 + ") = ");
+            }else {
+                taskText.setText(num2 + " - " + num1 + " = ");
+            }
+        }
+        else if (rand == 3){
+            num1 = getRandom(1,25);
+            ans = (int) Math.pow(num1,2);
+            taskText.setText(num1 + " в степени " + 2 + " = \n");
+        }
+        else if (rand == 4){
+            num1 = getRandom(10, 99);
+            ans = num1 * 11;
+            taskText.setText(num1 + " ⋅ " + 11 + " = ");
+        }
+        else {
             num1 = 0;
             num2 = 0;
             while (num1 == 0){
@@ -228,7 +258,7 @@ public class Level11MathActivity extends AppCompatActivity {
         btn_continue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Level11MathActivity.this, ChooseTrueActivity.class));
+                startActivity(new Intent(Level12MathActivity.this, ChooseTrueActivity.class));
                 finish();
             }
         });
