@@ -370,6 +370,7 @@ public class Level4MathActivity extends AppCompatActivity {
         btn_continue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                dialog.dismiss();
                 startActivity(new Intent(Level4MathActivity.this, ChooseTrueActivity.class));
                 finish();
             }

@@ -11,12 +11,56 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CheckBrain">
-        <activity android:name=".ChooseTrue.ChooseTrueActivity" android:screenOrientation="portrait"><intent-filter>
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter></activity>
-
-        <activity android:name=".Geog.Level1GeogActivity" android:screenOrientation="portrait"><intent-filter><category android:name="android.intent.category.LAUNCHER" /></intent-filter></activity>
-        <activity android:name=".ChooseTrue.Level1ChooseTrueActivity" android:screenOrientation="portrait"><intent-filter><category android:name="android.intent.category.LAUNCHER" /></intent-filter></activity>
+        <activity android:name=".Histrory.HisoryActivity"></activity>
+        <activity
+            android:name=".ChooseTrue.ChooseTrueActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Geog.Level1GeogActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ChooseTrue.Level1ChooseTrueActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ChooseTrue.Level2ChooseTrueActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ChooseTrue.Level3ChooseTrueActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ChooseTrue.Level4ChooseTrueActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ChooseTrue.Level5ChooseTrueActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".Geog.Level2GeogActivity"
             android:screenOrientation="portrait">

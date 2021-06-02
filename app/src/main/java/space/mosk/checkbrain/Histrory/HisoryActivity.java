@@ -1,4 +1,4 @@
-package space.mosk.checkbrain.ChooseTrue;
+package space.mosk.checkbrain.Histrory;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,26 +16,26 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import space.mosk.checkbrain.AccountActivity;
 import space.mosk.checkbrain.AuthActivity;
+import space.mosk.checkbrain.ChooseTrue.ChooseTrueActivity;
+import space.mosk.checkbrain.ChooseTrue.Level1ChooseTrueActivity;
+import space.mosk.checkbrain.ChooseTrue.Level2ChooseTrueActivity;
 import space.mosk.checkbrain.DashBoard;
-import space.mosk.checkbrain.Geog.Level2GeogActivity;
-import space.mosk.checkbrain.Geog.Level3GeogActivity;
-import space.mosk.checkbrain.Geog.Level4GeogActivity;
-import space.mosk.checkbrain.Geog.Level5GeogActivity;
 import space.mosk.checkbrain.MainActivity;
 import space.mosk.checkbrain.R;
 import space.mosk.checkbrain.TestsActivity;
 
-public class ChooseTrueActivity extends AppCompatActivity {
+public class HisoryActivity extends AppCompatActivity {
 
     Button btn_back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_choose_true);
+        setContentView(R.layout.activity_hisory);
+
         // проверка авторизации пользователя
         if (FirebaseAuth.getInstance().getCurrentUser() == null){
-            startActivity(new Intent(ChooseTrueActivity.this, AuthActivity.class));
+            startActivity(new Intent(HisoryActivity.this, AuthActivity.class));
             finish();
         }
 
@@ -82,7 +82,7 @@ public class ChooseTrueActivity extends AppCompatActivity {
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(ChooseTrueActivity.this, MainActivity.class));
+                startActivity(new Intent(HisoryActivity.this, MainActivity.class));
                 overridePendingTransition(0,0);
             }
         });
@@ -92,7 +92,7 @@ public class ChooseTrueActivity extends AppCompatActivity {
         textView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(ChooseTrueActivity.this, Level1ChooseTrueActivity.class));
+                startActivity(new Intent(HisoryActivity.this, Level1HisoryActivity.class));
             }
         });
 
@@ -100,31 +100,9 @@ public class ChooseTrueActivity extends AppCompatActivity {
         textView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(ChooseTrueActivity.this, Level2ChooseTrueActivity.class));
+                startActivity(new Intent(HisoryActivity.this, Level2ChooseTrueActivity.class));
             }
         });
 
-        TextView textView3 = findViewById(R.id.textMathView3);
-        textView3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(ChooseTrueActivity.this, Level3ChooseTrueActivity.class));
-            }
-        });
-
-        TextView textView4 = findViewById(R.id.textMathView4);
-        textView4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(ChooseTrueActivity.this, Level4ChooseTrueActivity.class));
-            }
-        });
-        TextView textView5 = findViewById(R.id.textMathView5);
-        textView5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(ChooseTrueActivity.this, Level5ChooseTrueActivity.class));
-            }
-        });
     }
 }

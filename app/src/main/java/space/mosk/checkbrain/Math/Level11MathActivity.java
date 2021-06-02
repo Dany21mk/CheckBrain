@@ -228,6 +228,7 @@ public class Level11MathActivity extends AppCompatActivity {
         btn_continue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                dialog.dismiss();
                 startActivity(new Intent(Level11MathActivity.this, ChooseTrueActivity.class));
                 finish();
             }

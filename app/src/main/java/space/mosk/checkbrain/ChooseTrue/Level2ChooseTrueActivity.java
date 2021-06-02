@@ -12,7 +12,6 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -23,11 +22,10 @@ import java.util.Random;
 
 import space.mosk.checkbrain.Array;
 import space.mosk.checkbrain.AuthActivity;
-import space.mosk.checkbrain.Math.Level1MathActivity;
 import space.mosk.checkbrain.Math.MathActivity;
 import space.mosk.checkbrain.R;
 
-public class Level1ChooseTrueActivity extends AppCompatActivity {
+public class Level2ChooseTrueActivity extends AppCompatActivity {
 
     Button btn_back;
     Dialog dialog;
@@ -52,7 +50,7 @@ public class Level1ChooseTrueActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose3);
         if (FirebaseAuth.getInstance().getCurrentUser() == null){
-            startActivity(new Intent(Level1ChooseTrueActivity.this, AuthActivity.class));
+            startActivity(new Intent(Level2ChooseTrueActivity.this, AuthActivity.class));
             finish();
         }
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
@@ -71,7 +69,7 @@ public class Level1ChooseTrueActivity extends AppCompatActivity {
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Level1ChooseTrueActivity.this, ChooseTrueActivity.class));
+                startActivity(new Intent(Level2ChooseTrueActivity.this, ChooseTrueActivity.class));
                 overridePendingTransition(0,0);
             }
         });
@@ -185,7 +183,7 @@ public class Level1ChooseTrueActivity extends AppCompatActivity {
         int cnt = -1;
         while (cnt != 0){
             cnt = 0;
-            num = random.nextInt(array.choose_true1.length);
+            num = random.nextInt(array.choose_true2.length);
             for (int i = 0; i < arrayList.size(); i++){
                 if (num == arrayList.get(i)){
                     cnt+=1;
@@ -195,8 +193,8 @@ public class Level1ChooseTrueActivity extends AppCompatActivity {
         }
 
         arrayList.add(num);
-        text_task.setText(array.choose_true1[num]);
-        boolAns = array.chooseTrueAns1[num];
+        text_task.setText(array.choose_true2[num]);
+        boolAns = array.chooseTrueAns2[num];
     }
     public void handlerProgress(boolean bool) {
         TextView tvPr = findViewById(progress[counter-1]);
@@ -224,7 +222,7 @@ public class Level1ChooseTrueActivity extends AppCompatActivity {
                 btn_continue.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        startActivity(new Intent(Level1ChooseTrueActivity.this, ChooseTrueActivity.class));
+                        startActivity(new Intent(Level2ChooseTrueActivity.this, ChooseTrueActivity.class));
                         finish();
                     }
                 });
@@ -251,7 +249,7 @@ public class Level1ChooseTrueActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 dialog.dismiss();
-                startActivity(new Intent(Level1ChooseTrueActivity.this, ChooseTrueActivity.class));
+                startActivity(new Intent(Level2ChooseTrueActivity.this, ChooseTrueActivity.class));
                 finish();
             }
         });

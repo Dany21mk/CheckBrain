@@ -359,6 +359,7 @@ public class Level8MathActivity extends AppCompatActivity {
         btn_continue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                dialog.dismiss();
                 startActivity(new Intent(Level8MathActivity.this, ChooseTrueActivity.class));
                 finish();
             }

@@ -180,7 +180,7 @@
                     android:textSize="44sp"
                     android:textStyle="bold"
                     android:textColor="@color/black"
-                    android:background="@drawable/style_choose_btn" />
+                    android:background="@drawable/style_choose_btn_fl" />
                 <TextView
                     android:id="@+id/ans_2"
                     android:layout_width="match_parent"
@@ -192,7 +192,7 @@
                     android:textSize="44sp"
                     android:textStyle="bold"
                     android:textColor="@color/black"
-                    android:background="@drawable/style_choose_btn" />
+                    android:background="@drawable/style_choose_btn_tr" />
 
             </LinearLayout>
 

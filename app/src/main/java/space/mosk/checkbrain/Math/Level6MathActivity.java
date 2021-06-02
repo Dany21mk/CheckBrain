@@ -378,6 +378,7 @@ public class Level6MathActivity extends AppCompatActivity {
         btn_continue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                dialog.dismiss();
                 startActivity(new Intent(Level6MathActivity.this, ChooseTrueActivity.class));
                 finish();
             }

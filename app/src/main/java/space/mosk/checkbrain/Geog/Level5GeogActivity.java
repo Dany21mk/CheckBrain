@@ -363,6 +363,7 @@ public class Level5GeogActivity extends AppCompatActivity {
         btn_continue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                dialog.dismiss();
                 startActivity(new Intent(Level5GeogActivity.this, ChooseTrueActivity.class));
                 finish();
             }

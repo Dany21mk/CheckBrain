@@ -24,8 +24,8 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
     RecyclerView.LayoutManager layoutManager;
-    String[] strTheme = {"Математика", "Правда или Ложь" , "Викторины", "Столицы мира","На общую эрудицию","История","Планеты", "Известные личности"};
-    int[] imagesTheme = {R.drawable.math, R.drawable.true_false, R.drawable.brain, R.drawable.geog, R.drawable.tests,R.drawable.history, R.drawable.planets, R.drawable.who_maker};
+    String[] strTheme = {"Математика", "Правда или Ложь" , "Столицы мира","История","Планеты", "Известные личности"};
+    int[] imagesTheme = {R.drawable.math, R.drawable.true_false, R.drawable.geog, R.drawable.history, R.drawable.planets, R.drawable.who_maker};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
