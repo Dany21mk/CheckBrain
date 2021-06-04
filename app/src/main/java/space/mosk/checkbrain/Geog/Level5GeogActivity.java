@@ -364,7 +364,7 @@ public class Level5GeogActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 dialog.dismiss();
-                startActivity(new Intent(Level5GeogActivity.this, ChooseTrueActivity.class));
+                startActivity(new Intent(Level5GeogActivity.this, GeogActivity.class));
                 finish();
             }
         });

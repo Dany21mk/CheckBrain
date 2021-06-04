@@ -379,7 +379,7 @@ public class Level5MathActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 dialog.dismiss();
-                startActivity(new Intent(Level5MathActivity.this, ChooseTrueActivity.class));
+                startActivity(new Intent(Level5MathActivity.this, MathActivity.class));
                 finish();
             }
         });

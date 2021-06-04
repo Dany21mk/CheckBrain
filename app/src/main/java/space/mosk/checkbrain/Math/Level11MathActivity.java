@@ -229,7 +229,7 @@ public class Level11MathActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 dialog.dismiss();
-                startActivity(new Intent(Level11MathActivity.this, ChooseTrueActivity.class));
+                startActivity(new Intent(Level11MathActivity.this, MathActivity.class));
                 finish();
             }
         });

@@ -12,8 +12,10 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
+import space.mosk.checkbrain.Games.GameActivity;
 import space.mosk.checkbrain.Math.MathActivity;
 
 public class DashBoard extends AppCompatActivity {
@@ -21,20 +23,11 @@ public class DashBoard extends AppCompatActivity {
     private long backPressedTime;
     private Toast backToast;
 
-    RecyclerView recyclerView;
-    RecyclerView.Adapter adapter;
-    RecyclerView.LayoutManager layoutManager;
-    String[] strTheme = {"Чат", "Перемена" , "О приложении", "Мои задачи","Магазин"};
-    int[] imagesTheme = {R.drawable.chat, R.drawable.game, R.drawable.about, R.drawable.tasks, R.drawable.shop};
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dash_board);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Сервисы");
 
 
         // проверка авторизации пользователя
@@ -42,14 +35,6 @@ public class DashBoard extends AppCompatActivity {
             startActivity(new Intent(DashBoard.this, AuthActivity.class));
             finish();
         }
-
-        // Делаем скролл
-        recyclerView = findViewById(R.id.recycler_theme);
-        recyclerView.setHasFixedSize(true);
-        layoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(layoutManager);
-        adapter = new ServiceAdapter(this, imagesTheme, strTheme);
-        recyclerView.setAdapter(adapter);
 
 
         // Настройка меню
@@ -74,6 +59,33 @@ public class DashBoard extends AppCompatActivity {
                         return true;
                     case R.id.tests:
                         startActivity(new Intent(getApplicationContext(), TestsActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+                return false;
+            }
+        });
+
+        // меню сервисы
+        NavigationView navigationView = findViewById(R.id.service_navigation);
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.chat:
+                        startActivity(new Intent(getApplicationContext(), ChatActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.game:
+                        startActivity(new Intent(getApplicationContext(), GameActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.shop:
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.task:
+                        startActivity(new Intent(getApplicationContext(), AccountActivity.class));
                         overridePendingTransition(0,0);
                         return true;
                 }

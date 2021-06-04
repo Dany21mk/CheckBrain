@@ -399,7 +399,7 @@ public class Level7GeogActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 dialog.dismiss();
-                startActivity(new Intent(Level7GeogActivity.this, ChooseTrueActivity.class));
+                startActivity(new Intent(Level7GeogActivity.this, GeogActivity.class));
                 finish();
             }
         });

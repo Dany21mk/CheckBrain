@@ -379,7 +379,7 @@ public class Level6MathActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 dialog.dismiss();
-                startActivity(new Intent(Level6MathActivity.this, ChooseTrueActivity.class));
+                startActivity(new Intent(Level6MathActivity.this, MathActivity.class));
                 finish();
             }
         });

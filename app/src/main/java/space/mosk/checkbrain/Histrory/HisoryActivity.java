@@ -92,7 +92,7 @@ public class HisoryActivity extends AppCompatActivity {
         textView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(HisoryActivity.this, Level1HisoryActivity.class));
+                startActivity(new Intent(HisoryActivity.this, Level1HistoryActivity.class));
             }
         });
 
@@ -100,7 +100,7 @@ public class HisoryActivity extends AppCompatActivity {
         textView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(HisoryActivity.this, Level2ChooseTrueActivity.class));
+                startActivity(new Intent(HisoryActivity.this, Level2HistoryActivity.class));
             }
         });
 

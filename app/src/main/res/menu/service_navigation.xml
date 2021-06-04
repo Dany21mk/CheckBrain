@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/game"
+        android:title="Перемена"
+        android:background="@drawable/btn_ripple_menu"
+        android:icon="@drawable/ic_game"/>
+    <item
+        android:id="@+id/chat"
+        android:title="Пользовательский чат"
+        android:background="@drawable/btn_ripple_menu"
+        android:icon="@drawable/ic_msg"/>
+    <item
+        android:id="@+id/shop"
+        android:title="Магазин"
+        android:background="@drawable/btn_ripple_menu"
+        android:icon="@drawable/ic_shop"/>
+    <item
+        android:id="@+id/tasks"
+        android:title="Мои задачи"
+        android:background="@drawable/btn_ripple_menu"
+        android:icon="@drawable/ic_google"/>
+</menu>

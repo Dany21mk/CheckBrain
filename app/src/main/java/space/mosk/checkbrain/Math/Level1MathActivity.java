@@ -246,7 +246,7 @@ public class Level1MathActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 dialog.dismiss();
-                startActivity(new Intent(Level1MathActivity.this, ChooseTrueActivity.class));
+                startActivity(new Intent(Level1MathActivity.this, MathActivity.class));
                 finish();
             }
         });

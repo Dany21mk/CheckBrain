@@ -2,7 +2,6 @@ package space.mosk.checkbrain;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,8 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.Random;
 
+import space.mosk.checkbrain.Games.Game1Activity;
 import space.mosk.checkbrain.Games.GameActivity;
-import space.mosk.checkbrain.Math.MathActivity;
 
 public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ViewHolder> {
 
@@ -68,6 +67,6 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ViewHold
         this.context = context;
         this.images = images;
         this.strTheme = strTheme;
-        activityTheme = new Intent[]{new Intent(context, ChatActivity.class), new Intent(context, GameActivity.class), new Intent(context, AccountActivity.class), new Intent(context, AccountActivity.class), new Intent(context, AccountActivity.class)};
+        activityTheme = new Intent[]{new Intent(context, Game1Activity.class), new Intent(context, GameActivity.class), new Intent(context, AccountActivity.class)};
     }
 }

@@ -16,7 +16,10 @@ import java.util.Random;
 
 import space.mosk.checkbrain.ChooseTrue.ChooseTrueActivity;
 import space.mosk.checkbrain.Geog.GeogActivity;
+import space.mosk.checkbrain.Histrory.HisoryActivity;
 import space.mosk.checkbrain.Math.MathActivity;
+import space.mosk.checkbrain.Person.PersonActivity;
+import space.mosk.checkbrain.Planets.PlanetsActivity;
 
 public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ViewHolder> {
 
@@ -68,6 +71,6 @@ public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ViewHolder> 
         this.context = context;
         this.images = images;
         this.strTheme = strTheme;
-        activityTheme = new Intent[]{new Intent(context, MathActivity.class), new Intent(context, ChooseTrueActivity.class), new Intent(context, GeogActivity.class), new Intent(context, AccountActivity.class), new Intent(context, AccountActivity.class), new Intent(context, AccountActivity.class)};
+        activityTheme = new Intent[]{new Intent(context, MathActivity.class), new Intent(context, ChooseTrueActivity.class), new Intent(context, GeogActivity.class), new Intent(context, HisoryActivity.class), new Intent(context, PlanetsActivity.class), new Intent(context, PersonActivity.class)};
     }
 }

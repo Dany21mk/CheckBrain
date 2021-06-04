@@ -6,30 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".DashBoard">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/app_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/Theme.CheckBrain.AppBarOverlay">
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/btn_ripple_reg"
-            app:popupTheme="@style/Theme.CheckBrain.PopupOverlay">
-
-        </androidx.appcompat.widget.Toolbar>
-
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_theme"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/app_bar"
-        android:layout_above="@+id/bottom_navigation"/>
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="40dp">
+       <com.google.android.material.navigation.NavigationView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:id="@+id/service_navigation"
+           app:itemTextColor="@drawable/selector"
+           app:itemIconTint="@drawable/selector"
+           app:menu="@menu/service_navigation"
+           android:layout_alignParentBottom="true"/>
+   </LinearLayout>
 
 
 

@@ -371,7 +371,7 @@ public class Level3MathActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 dialog.dismiss();
-                startActivity(new Intent(Level3MathActivity.this, ChooseTrueActivity.class));
+                startActivity(new Intent(Level3MathActivity.this, MathActivity.class));
                 finish();
             }
         });

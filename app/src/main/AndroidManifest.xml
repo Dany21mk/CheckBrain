@@ -11,7 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CheckBrain">
-        <activity android:name=".Histrory.HisoryActivity"></activity>
+        <activity android:name=".Games.Game1Activity"></activity>
+        <activity android:name=".Person.PersonActivity" />
+        <activity android:name=".Planets.PlanetsActivity" />
+        <activity android:name=".Histrory.HisoryActivity" />
         <activity
             android:name=".ChooseTrue.ChooseTrueActivity"
             android:screenOrientation="portrait">
@@ -21,6 +24,48 @@
         </activity>
         <activity
             android:name=".Geog.Level1GeogActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Planets.Level1PlanetsActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Person.Level1PersonActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Person.Level2PersonActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Planets.Level2PlanetsActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Histrory.Level1HistoryActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Histrory.Level2HistoryActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />

@@ -360,7 +360,7 @@ public class Level8MathActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 dialog.dismiss();
-                startActivity(new Intent(Level8MathActivity.this, ChooseTrueActivity.class));
+                startActivity(new Intent(Level8MathActivity.this, MathActivity.class));
                 finish();
             }
         });
