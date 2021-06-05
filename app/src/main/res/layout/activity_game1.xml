@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Games.Game1Activity"
-    android:background="#3C4274">
+    android:background="#fff">
 
     <TextView
         android:layout_width="match_parent"
@@ -15,7 +15,7 @@
         android:layout_marginTop="30dp"
         android:fontFamily="@font/alfa_slab_one"
         android:text="0 cookie"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="40sp"
         android:textStyle="bold" />
 
@@ -24,6 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
+        android:background="@drawable/style_cookie"
         android:src="@drawable/cookie" />
 
     <TextView

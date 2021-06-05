@@ -37,9 +37,36 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="right"
+        android:id="@+id/block_likes"
+        android:layout_below="@id/app_toolbar"
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:id="@+id/heart1"
+            android:src="@drawable/heart"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:id="@+id/heart2"
+            android:src="@drawable/heart"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:id="@+id/heart3"
+            android:src="@drawable/heart"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:id="@+id/container1"
         android:gravity="center"
-        android:layout_below="@+id/app_toolbar"
         android:orientation="vertical">
 
         <LinearLayout

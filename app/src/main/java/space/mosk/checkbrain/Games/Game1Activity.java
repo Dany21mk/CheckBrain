@@ -46,7 +46,7 @@ public class Game1Activity extends AppCompatActivity {
                     click.setScaleY((float) 1);
                     if (getIntValue() % 100 == 0){
                         textCookieAdd.setText("");
-                        textCookieAdd.setTextColor(Color.rgb(255, 255,255));
+                        textCookieAdd.setTextColor(Color.rgb(0, 0,0));
                     }
                     updateNum(getIntValue()+1);
                 }

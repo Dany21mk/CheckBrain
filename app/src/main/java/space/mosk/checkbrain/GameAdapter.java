@@ -14,9 +14,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.Random;
 
 import space.mosk.checkbrain.Games.Game1Activity;
+import space.mosk.checkbrain.Games.Game2Activity;
+import space.mosk.checkbrain.Games.Game3Activity;
 import space.mosk.checkbrain.Games.GameActivity;
 
-public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ViewHolder> {
+public class GameAdapter extends RecyclerView.Adapter<GameAdapter.ViewHolder> {
 
     Context context;
     int[] images;
@@ -25,7 +27,7 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ViewHold
 
     @NonNull
     @Override
-    public ServiceAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public GameAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.list_item_service,parent,false);
         ViewHolder viewHolder = new ViewHolder((view));
@@ -34,7 +36,7 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ViewHold
 
 
     @Override
-    public void onBindViewHolder(@NonNull ServiceAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull GameAdapter.ViewHolder holder, int position) {
         holder.rowImage.setImageResource(images[position]);
         holder.rowBtn.setText(strTheme[position]);
         Random rnd = new Random();
@@ -63,10 +65,10 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ViewHold
         }
     }
 
-    public ServiceAdapter(Context context, int[] images, String[] strTheme) {
+    public GameAdapter(Context context, int[] images, String[] strTheme) {
         this.context = context;
         this.images = images;
         this.strTheme = strTheme;
-        activityTheme = new Intent[]{new Intent(context, Game1Activity.class), new Intent(context, GameActivity.class), new Intent(context, AccountActivity.class)};
+        activityTheme = new Intent[]{new Intent(context, Game1Activity.class), new Intent(context, Game2Activity.class), new Intent(context, Game3Activity.class)};
     }
 }

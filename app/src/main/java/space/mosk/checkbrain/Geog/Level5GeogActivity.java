@@ -10,18 +10,18 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 import space.mosk.checkbrain.Array;
 import space.mosk.checkbrain.AuthActivity;
-import space.mosk.checkbrain.ChooseTrue.ChooseTrueActivity;
 import space.mosk.checkbrain.R;
 
 public class Level5GeogActivity extends AppCompatActivity {

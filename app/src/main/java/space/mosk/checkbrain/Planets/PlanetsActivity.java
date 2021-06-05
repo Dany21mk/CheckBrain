@@ -17,8 +17,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import space.mosk.checkbrain.AccountActivity;
 import space.mosk.checkbrain.AuthActivity;
 import space.mosk.checkbrain.DashBoard;
-import space.mosk.checkbrain.Histrory.Level1HistoryActivity;
-import space.mosk.checkbrain.Histrory.Level2HistoryActivity;
 import space.mosk.checkbrain.MainActivity;
 import space.mosk.checkbrain.R;
 import space.mosk.checkbrain.TestsActivity;

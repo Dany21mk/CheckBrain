@@ -16,9 +16,6 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import space.mosk.checkbrain.AccountActivity;
 import space.mosk.checkbrain.AuthActivity;
-import space.mosk.checkbrain.ChooseTrue.ChooseTrueActivity;
-import space.mosk.checkbrain.ChooseTrue.Level1ChooseTrueActivity;
-import space.mosk.checkbrain.ChooseTrue.Level2ChooseTrueActivity;
 import space.mosk.checkbrain.DashBoard;
 import space.mosk.checkbrain.MainActivity;
 import space.mosk.checkbrain.R;

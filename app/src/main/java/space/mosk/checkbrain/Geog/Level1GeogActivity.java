@@ -12,11 +12,13 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 import space.mosk.checkbrain.Array;
@@ -29,13 +31,18 @@ public class Level1GeogActivity extends AppCompatActivity {
 
     Button btn_back;
     Dialog dialog;
-    public int counter = 0;
+    public int counter = 0, lives = 3;
     public TextView ans_1;
     public TextView ans_2;
     public TextView ans_3;
     public TextView ans_4;
     Array array = new Array();
     public String ans = "";
+    ArrayList<Integer> arrayList = new ArrayList<>();
+
+    ImageView heart1;
+    ImageView heart2;
+    ImageView heart3;
 
     public int rand = 0;
     public String answers[] = {"", "", "", ""};
@@ -46,7 +53,7 @@ public class Level1GeogActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_choose2);
+        setContentView(R.layout.activity_choose_lives);
         if (FirebaseAuth.getInstance().getCurrentUser() == null){
             startActivity(new Intent(space.mosk.checkbrain.Geog.Level1GeogActivity.this, AuthActivity.class));
             finish();
@@ -61,6 +68,10 @@ public class Level1GeogActivity extends AppCompatActivity {
                 overridePendingTransition(0,0);
             }
         });
+
+        heart1 = findViewById(R.id.heart1);
+        heart2 = findViewById(R.id.heart2);
+        heart3 = findViewById(R.id.heart3);
 
         // Вызов dialog
         dialog = new Dialog(this);
@@ -111,19 +122,10 @@ public class Level1GeogActivity extends AppCompatActivity {
                         ans_1.setTextColor(Color.rgb(255, 255, 255));
                     }
                 } else if (motionEvent.getAction() == MotionEvent.ACTION_UP){
+                    counter++;
                     if (ans == answers[0]){
-                        if (counter<20){
-                            counter++;
-                        }
                         handlerProgress(true);
                     } else {
-                        if (counter>0){
-                            if (counter==1){
-                                counter=0;
-                            } else {
-                                counter-=2;
-                            }
-                        }
                         handlerProgress(false);
                     }
                     if (counter>=20){
@@ -155,19 +157,10 @@ public class Level1GeogActivity extends AppCompatActivity {
                         ans_2.setTextColor(Color.rgb(255, 255, 255));
                     }
                 } else if (motionEvent.getAction() == MotionEvent.ACTION_UP){
+                    counter++;
                     if (ans == answers[1]){
-                        if (counter<20){
-                            counter++;
-                        }
                         handlerProgress(true);
                     } else {
-                        if (counter>0){
-                            if (counter==1){
-                                counter=0;
-                            } else {
-                                counter-=2;
-                            }
-                        }
                         handlerProgress(false);
                     }
                     if (counter>=20){
@@ -199,19 +192,10 @@ public class Level1GeogActivity extends AppCompatActivity {
                         ans_3.setTextColor(Color.rgb(255, 255, 255));
                     }
                 } else if (motionEvent.getAction() == MotionEvent.ACTION_UP){
+                    counter++;
                     if (ans == answers[2]){
-                        if (counter<20){
-                            counter++;
-                        }
                         handlerProgress(true);
                     } else {
-                        if (counter>0){
-                            if (counter==1){
-                                counter=0;
-                            } else {
-                                counter-=2;
-                            }
-                        }
                         handlerProgress(false);
                     }
                     if (counter>=20){
@@ -243,19 +227,10 @@ public class Level1GeogActivity extends AppCompatActivity {
                         ans_4.setTextColor(Color.rgb(255, 255, 255));
                     }
                 } else if (motionEvent.getAction() == MotionEvent.ACTION_UP){
+                    counter++;
                     if (ans == answers[3]){
-                        if (counter<20){
-                            counter++;
-                        }
                         handlerProgress(true);
                     } else {
-                        if (counter>0){
-                            if (counter==1){
-                                counter=0;
-                            } else {
-                                counter-=2;
-                            }
-                        }
                         handlerProgress(false);
                     }
                     if (counter>=20){
@@ -276,31 +251,39 @@ public class Level1GeogActivity extends AppCompatActivity {
     }
 
     public void handlerProgress(boolean bool) {
+        TextView tvPr = findViewById(progress[counter-1]);
         if (bool){
-            for (int i = 0; i < 20; i++) {
-                TextView tvPr = findViewById(progress[i]);
-                tvPr.setBackgroundResource(R.drawable.style_points);
-            }
-            for (int i = 0; i < counter; i++) {
-                TextView tvPr = findViewById(progress[i]);
-                tvPr.setBackgroundResource(R.drawable.style_points);
-                tvPr.setBackgroundResource(R.drawable.style_points_true);
-            }
+            tvPr.setBackgroundResource(R.drawable.style_points_true);
         } else {
-            for (int i = 0; i < 19; i++) {
-                TextView tvPr = findViewById(progress[i]);
-                tvPr.setBackgroundResource(R.drawable.style_points);
-            }
-            for (int i = 0; i < counter; i++) {
-                TextView tvPr = findViewById(progress[i]);
-                tvPr.setBackgroundResource(R.drawable.style_points);
-                tvPr.setBackgroundResource(R.drawable.style_points_true);
+            tvPr.setBackgroundResource(R.drawable.style_points_false);
+            lives--;
+            if (lives == 2){
+                heart3.setImageResource(R.drawable.heart_open);
+            }else if(lives == 1){
+                heart2.setImageResource(R.drawable.heart_open);
+            } else{
+                heart1.setImageResource(R.drawable.heart_open);
+                livesover();
             }
         }
     }
 
     public void handler() {
-        rand = random.nextInt(array.europe.length);
+        rand = 0;
+        int cnt = -1;
+        while (cnt != 0){
+            cnt = 0;
+            rand = random.nextInt(array.europe.length);
+            for (int i = 0; i < arrayList.size(); i++){
+                if (rand == arrayList.get(i)){
+                    cnt+=1;
+                    break;
+                }
+            }
+        }
+
+        arrayList.add(rand);
+
         tv = findViewById(R.id.task);
         tv.setTextSize(25);
         ans = array.europeAnswer[rand];
@@ -352,6 +335,10 @@ public class Level1GeogActivity extends AppCompatActivity {
         }
     }
     public void gameover(){
+        if (lives == 0){
+            livesover();
+            return;
+        }
         // Вызов dialog
         dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -373,4 +360,27 @@ public class Level1GeogActivity extends AppCompatActivity {
 
         dialog.show();
     }
+
+    public void livesover(){
+        // Вызов dialog
+        dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.previewdialog);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.setCancelable(false);
+        TextView tx = dialog.findViewById(R.id.textTask);
+        tx.setText("У вас закончились жизни");
+        Button btn_continue = dialog.findViewById(R.id.btn_continue);
+        btn_continue.setText("Выйти в меню");
+        btn_continue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Level1GeogActivity.this, GeogActivity.class));
+                finish();
+            }
+        });
+
+        dialog.show();
+    }
+
 }
