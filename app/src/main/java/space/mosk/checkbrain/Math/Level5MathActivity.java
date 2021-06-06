@@ -412,6 +412,6 @@ public class Level5MathActivity extends AppCompatActivity {
         return money;
     }
     private void updateNum(float value){
-        money = (float) (value+0.5);
+        money = (float) (value+2);
     }
 }

@@ -283,6 +283,6 @@ public class Level5ChooseTrueActivity extends AppCompatActivity {
         return money;
     }
     private void updateNum(int value){
-        money = value+1;
+        money = value+4;
     }
 }

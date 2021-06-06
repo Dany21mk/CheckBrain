@@ -309,6 +309,6 @@ public class Level2PlanetsActivity extends AppCompatActivity {
         return money;
     }
     private void updateNum(int value){
-        money = value+1;
+        money = value+4;
     }
 }

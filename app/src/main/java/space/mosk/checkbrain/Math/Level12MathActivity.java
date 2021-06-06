@@ -292,6 +292,6 @@ public class Level12MathActivity extends AppCompatActivity {
         return money;
     }
     private void updateNum(int value){
-        money = value+2;
+        money = value+10;
     }
 }

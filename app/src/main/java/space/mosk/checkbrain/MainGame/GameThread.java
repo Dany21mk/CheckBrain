@@ -28,7 +28,6 @@ public class GameThread extends Thread {
     private long enemySpawnTime;
     protected float cx, cy, radius;
     private long start;
-    protected boolean game = true;
     ArrayList<Integer> arrayList = new ArrayList<>();
 
     public GameThread(SurfaceHolder holder) {
@@ -72,6 +71,7 @@ public class GameThread extends Thread {
         long startTime = System.currentTimeMillis();
         long circleStartTime = startTime;
         int epochCount = 0;
+
         while (running) {
             synchronized (holder) {
                 Canvas canvas = null;
@@ -85,10 +85,14 @@ public class GameThread extends Thread {
                 }
                 if (epochCount > 10) {
                     epochCount = 0;
+                    wave+=1;
                     enemySpawnTime -= 50;
-                    if (enemySpawnTime < 350) {
-                        enemySpawnTime = 350;
+                    if (enemySpawnTime < 300) {
+                        enemySpawnTime = 300;
                     }
+                }
+                if (wave > 12){
+                    wave = 0;
                     GameMainActivity.coin += 2;
                     GameMainActivity.saveHistoryCoin();
                 }

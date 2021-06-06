@@ -280,6 +280,6 @@ public class Level1MathActivity extends AppCompatActivity {
         return money;
     }
     private void updateNum(float value){
-        money = (float) (value+500);
+        money = (float) (value+2);
     }
 }

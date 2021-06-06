@@ -418,6 +418,6 @@ public class Level7MathActivity extends AppCompatActivity {
         return money;
     }
     private void updateNum(int value){
-        money = value+1;
+        money = value+3;
     }
 }
