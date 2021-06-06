@@ -3,7 +3,9 @@ package space.mosk.checkbrain;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -34,6 +36,11 @@ public class AccountActivity extends AppCompatActivity {
     FirebaseAuth auth;
     FirebaseDatabase db;
     DatabaseReference users;
+    private int money = 0;
+
+    private SharedPreferences preferences;
+
+    TextView coin;
 
     public String username;
 
@@ -53,6 +60,15 @@ public class AccountActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         db = FirebaseDatabase.getInstance("https://checkbrain-aaf80-default-rtdb.firebaseio.com/");
         users = db.getReference("Users");
+
+        coin = findViewById(R.id.coin);
+
+        preferences = getSharedPreferences(getApplicationContext().getPackageName() + "_preferences", Context.MODE_PRIVATE);
+        loadHistoryValue();
+
+        coin.setText(String.valueOf(money));
+
+
 
         users.addValueEventListener(new ValueEventListener() {
             @Override
@@ -104,4 +120,15 @@ public class AccountActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void loadHistoryValue(){
+        int value = preferences.getInt("money", 0);
+        updateNum(value);
+    }
+    private void updateNum(int value){
+        money = value;
+    }
+
+
+
 }

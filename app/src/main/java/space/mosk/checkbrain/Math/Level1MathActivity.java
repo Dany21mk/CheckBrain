@@ -5,7 +5,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ActionBar;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -41,6 +43,10 @@ public class Level1MathActivity extends AppCompatActivity {
     Random random = new Random();
     public int counter = 0;
 
+    private float money = 0;
+
+    private SharedPreferences preferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +59,9 @@ public class Level1MathActivity extends AppCompatActivity {
 
         TextView text_task = findViewById(R.id.task);
         text_task.setText(R.string.levelonemath);
+
+        preferences = getSharedPreferences(getApplicationContext().getPackageName() + "_preferences",Context.MODE_PRIVATE);
+        loadHistoryValue();
 
         final ImageView img_left = findViewById(R.id.img_left);
         final ImageView img_right = findViewById(R.id.img_right);
@@ -238,6 +247,8 @@ public class Level1MathActivity extends AppCompatActivity {
         dialog.setContentView(R.layout.previewdialog);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.setCancelable(false);
+        ImageView iv = dialog.findViewById(R.id.previewimg);
+        iv.setImageResource(R.drawable.coin_big);
         TextView tx = dialog.findViewById(R.id.textTask);
         tx.setText("Уровень успешно пройден");
         Button btn_continue = dialog.findViewById(R.id.btn_continue);
@@ -251,6 +262,24 @@ public class Level1MathActivity extends AppCompatActivity {
             }
         });
 
+        updateNum(money);
+        saveHistory();
+
         dialog.show();
+    }
+
+    private void loadHistoryValue(){
+        int value = preferences.getInt("money", 0);
+        updateNum(value);
+    }
+
+    private void saveHistory(){
+        preferences.edit().putInt("money", (int) getIntValue()).apply();
+    }
+    private float getIntValue(){
+        return money;
+    }
+    private void updateNum(float value){
+        money = (float) (value+500);
     }
 }

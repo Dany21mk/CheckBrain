@@ -1,7 +1,9 @@
 package space.mosk.checkbrain.Geog;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -41,6 +43,10 @@ public class Level4GeogActivity extends AppCompatActivity {
     ImageView heart2;
     ImageView heart3;
 
+    private int money = 0;
+
+    private SharedPreferences preferences;
+
     public int rand = 0;
     public String answers[] = {"", "", "", ""};
     public final int[] progress = {R.id.point1,R.id.point2,R.id.point3,R.id.point4,R.id.point5,R.id.point6,R.id.point7,R.id.point8,R.id.point9,R.id.point10,R.id.point11,R.id.point12,R.id.point13,R.id.point14,R.id.point15,R.id.point16,R.id.point17,R.id.point18,R.id.point19,R.id.point20};
@@ -69,6 +75,9 @@ public class Level4GeogActivity extends AppCompatActivity {
         heart1 = findViewById(R.id.heart1);
         heart2 = findViewById(R.id.heart2);
         heart3 = findViewById(R.id.heart3);
+
+        preferences = getSharedPreferences(getApplicationContext().getPackageName() + "_preferences", Context.MODE_PRIVATE);
+        loadHistoryValue();
 
         // Вызов dialog
         dialog = new Dialog(this);
@@ -354,6 +363,11 @@ public class Level4GeogActivity extends AppCompatActivity {
             }
         });
 
+        ImageView iv = dialog.findViewById(R.id.previewimg);
+        iv.setImageResource(R.drawable.coin_big);
+        updateNum(money);
+        saveHistory();
+
         dialog.show();
     }
     public void livesover(){
@@ -376,5 +390,20 @@ public class Level4GeogActivity extends AppCompatActivity {
         });
 
         dialog.show();
+    }
+
+    private void loadHistoryValue(){
+        int value = preferences.getInt("money", 0);
+        updateNum(value);
+    }
+
+    private void saveHistory(){
+        preferences.edit().putInt("money",  getIntValue()).apply();
+    }
+    private int getIntValue(){
+        return money;
+    }
+    private void updateNum(int value){
+        money = value+1;
     }
 }

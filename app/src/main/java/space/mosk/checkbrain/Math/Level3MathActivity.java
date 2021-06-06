@@ -3,7 +3,9 @@ package space.mosk.checkbrain.Math;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -36,6 +38,9 @@ public class Level3MathActivity extends AppCompatActivity {
     public TextView ans_2;
     public TextView ans_3;
     public TextView ans_4;
+    private int money = 0;
+
+    private SharedPreferences preferences;
 
     public int rand = 0;
     public int answers[] = {-1, -1, -1, -1};
@@ -60,6 +65,9 @@ public class Level3MathActivity extends AppCompatActivity {
                 overridePendingTransition(0,0);
             }
         });
+
+        preferences = getSharedPreferences(getApplicationContext().getPackageName() + "_preferences", Context.MODE_PRIVATE);
+        loadHistoryValue();
 
         // Вызов dialog
         dialog = new Dialog(this);
@@ -363,6 +371,8 @@ public class Level3MathActivity extends AppCompatActivity {
         dialog.setContentView(R.layout.previewdialog);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.setCancelable(false);
+        ImageView iv = dialog.findViewById(R.id.previewimg);
+        iv.setImageResource(R.drawable.coin_big);
         TextView tx = dialog.findViewById(R.id.textTask);
         tx.setText("Уровень успешно пройден");
         Button btn_continue = dialog.findViewById(R.id.btn_continue);
@@ -376,6 +386,24 @@ public class Level3MathActivity extends AppCompatActivity {
             }
         });
 
+        updateNum(money);
+        saveHistory();
+
         dialog.show();
+    }
+
+    private void loadHistoryValue(){
+        int value = preferences.getInt("money", 0);
+        updateNum(value);
+    }
+
+    private void saveHistory(){
+        preferences.edit().putInt("money", getIntValue()).apply();
+    }
+    private int getIntValue(){
+        return money;
+    }
+    private void updateNum(int value){
+        money = value+1;
     }
 }

@@ -141,10 +141,10 @@ public class Game3Thread extends Thread {
                 }*/
                 //  if (current - start > 1) {
                 canvas = holder.lockCanvas();
-                draw(canvas);
+                try{draw(canvas);}catch (Exception e){}
                 updateParams();
                 start = current;
-                holder.unlockCanvasAndPost(canvas);
+                try{holder.unlockCanvasAndPost(canvas);}catch (Exception e){}
                 //  }
                 try {
                     TimeUnit.MICROSECONDS.sleep(30);
@@ -159,9 +159,13 @@ public class Game3Thread extends Thread {
         if (game){
             paint.setStyle(Paint.Style.FILL);
             paint.setColor(Color.rgb(76, 175, 80));
-            canvas.drawColor(Color.rgb(183,239,237));
+            try {
+                canvas.drawColor(Color.rgb(183,239,237));
+            } catch (Exception e){}
             for (Circle circle : circles){
-                canvas.drawCircle(circle.getX(), circle.getY(), circle.getR(), paint);
+               try {
+                   canvas.drawCircle(circle.getX(), circle.getY(), circle.getR(), paint);
+               }catch (Exception e){}
             }
             paint.setColor(Color.RED);
             for (Enemy2 enemy : enemies){

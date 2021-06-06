@@ -16,8 +16,8 @@
         android:background="@drawable/btn_ripple_menu"
         android:icon="@drawable/ic_shop"/>
     <item
-        android:id="@+id/tasks"
-        android:title="Мои задачи"
+        android:id="@+id/game_main"
+        android:title="Игра CheckBrain"
         android:background="@drawable/btn_ripple_menu"
-        android:icon="@drawable/ic_google"/>
+        android:icon="@drawable/ic_baseline_catching_pokemon_24"/>
 </menu>

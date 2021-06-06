@@ -1,7 +1,9 @@
 package space.mosk.checkbrain.Geog;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -37,6 +39,10 @@ public class Level6GeogActivity extends AppCompatActivity {
     public String ans = "";
     ArrayList<Integer> arrayList = new ArrayList<>();
 
+    private int money = 0;
+
+    private SharedPreferences preferences;
+
     ImageView heart1;
     ImageView heart2;
     ImageView heart3;
@@ -69,6 +75,9 @@ public class Level6GeogActivity extends AppCompatActivity {
         heart1 = findViewById(R.id.heart1);
         heart2 = findViewById(R.id.heart2);
         heart3 = findViewById(R.id.heart3);
+
+        preferences = getSharedPreferences(getApplicationContext().getPackageName() + "_preferences", Context.MODE_PRIVATE);
+        loadHistoryValue();
 
         // Вызов dialog
         dialog = new Dialog(this);
@@ -355,6 +364,11 @@ public class Level6GeogActivity extends AppCompatActivity {
             }
         });
 
+        ImageView iv = dialog.findViewById(R.id.previewimg);
+        iv.setImageResource(R.drawable.coin_big);
+        updateNum(money);
+        saveHistory();
+
         dialog.show();
     }
     public void livesover(){
@@ -377,5 +391,20 @@ public class Level6GeogActivity extends AppCompatActivity {
         });
 
         dialog.show();
+    }
+
+    private void loadHistoryValue(){
+        int value = preferences.getInt("money", 0);
+        updateNum(value);
+    }
+
+    private void saveHistory(){
+        preferences.edit().putInt("money",  getIntValue()).apply();
+    }
+    private int getIntValue(){
+        return money;
+    }
+    private void updateNum(int value){
+        money = value+1;
     }
 }

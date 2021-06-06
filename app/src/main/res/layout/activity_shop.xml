@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ShopActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/app_bar"
+        android:theme="@style/Theme.CheckBrain.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/btn_ripple_reg"
+            app:popupTheme="@style/Theme.CheckBrain.PopupOverlay">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_ripple_back"
+                android:padding="5dp"
+                android:text="Назад"
+                android:id="@+id/btn_back_chat"
+                android:textColor="#fff"
+                android:src="@drawable/ic_back" />
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/block_txt"
+        android:layout_below="@id/app_bar"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/coin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="textEnd"
+            android:textColor="#FFC107"
+            android:text="0"
+            android:layout_marginLeft="10dp"
+            android:textStyle="bold"
+            android:textSize="40sp"
+            android:layout_marginRight="10dp"/>
+
+        <TextView
+            android:id="@+id/heart_lives"
+            android:layout_below="@id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="textEnd"
+            android:textColor="#FD0303"
+            android:text="0"
+            android:textStyle="bold"
+            android:textSize="40sp"
+            android:layout_marginRight="10dp"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/block_txt"
+        android:layout_above="@+id/container"
+        android:layout_marginTop="20dp">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:id="@+id/rocket_choose"
+            android:src="@drawable/rocket1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/container"
+        android:layout_alignParentBottom="true">
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="horizontal">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:id="@+id/rocket1"
+                android:layout_height="wrap_content"
+                android:src="@drawable/rocket1"/>
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:id="@+id/rocket2"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/rocket2" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:id="@+id/rocket3"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/rocket3" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:id="@+id/rocket4"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/rocket4"/>
+            </LinearLayout>
+        </HorizontalScrollView>
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="horizontal">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:id="@+id/lives"
+                        android:layout_gravity="center"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/heart" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="10 coin"
+                        android:textSize="20sp" />
+                </LinearLayout>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/patron1"
+                    android:height="120dp"
+                    android:text="100 Патронов\n 50"/>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/patron2"
+                    android:height="120dp"
+                    android:text="200 Патронов\n 70"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/patron3"
+                    android:height="120dp"
+                    android:text="300 Патронов\n 90" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/patron4"
+                    android:height="120dp"
+                    android:text="600 Патронов\n 160" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/patron5"
+                    android:height="120dp"
+                    android:text="700 Патронов\n 180"/>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="wrap_content"
+                    android:height="120dp"
+                    android:id="@+id/patron6"
+                    android:layout_height="wrap_content"
+                    android:text="1000 Патронов\n 200"/>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="wrap_content"
+                    android:height="120dp"
+                    android:id="@+id/patron7"
+                    android:layout_height="wrap_content"
+                    android:text="2000 Патронов\n 350"/>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="wrap_content"
+                    android:height="120dp"
+                    android:id="@+id/patron8"
+                    android:layout_height="wrap_content"
+                    android:text="3000 Патронов\n 450"/>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="wrap_content"
+                    android:height="120dp"
+                    android:id="@+id/patron9"
+                    android:layout_height="wrap_content"
+                    android:text="10000 Патронов\n 500"/>
+            </LinearLayout>
+        </HorizontalScrollView>
+    </LinearLayout>
+
+</RelativeLayout>

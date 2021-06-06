@@ -22,6 +22,10 @@ public class Game1Activity extends AppCompatActivity {
     private SharedPreferences preferences;
     private TextView textCookieAdd;
 
+    private int money = 0;
+
+    private SharedPreferences preferencesCoin;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,15 +33,20 @@ public class Game1Activity extends AppCompatActivity {
         counter = findViewById(R.id.txt_counter);
         textCookieAdd = findViewById(R.id.add_cookie);
         click = findViewById(R.id.cookie);
+
+        preferencesCoin = getSharedPreferences(getApplicationContext().getPackageName() + "_preferences", Context.MODE_PRIVATE);
+        loadHistoryValueCoin();
+
         preferences = getPreferences(Context.MODE_PRIVATE);
         loadHistoryValue();
+
         click.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     click.setScaleX((float) 1.1);
                     click.setScaleY((float) 1.1);
-                    if (getIntValue() % 1000 == 0){
+                    if (getIntValue() % 100 == 0){
                         textCookieAdd.setText("+1");
                         textCookieAdd.setTextColor(Color.rgb(210, 190,74));
                     }
@@ -45,6 +54,8 @@ public class Game1Activity extends AppCompatActivity {
                     click.setScaleX((float) 1);
                     click.setScaleY((float) 1);
                     if (getIntValue() % 100 == 0){
+                        updateNumCoin(money);
+                        saveHistoryCoin();
                         textCookieAdd.setText("");
                         textCookieAdd.setTextColor(Color.rgb(0, 0,0));
                     }
@@ -74,5 +85,21 @@ public class Game1Activity extends AppCompatActivity {
     }
     private void updateNum(int value){
         counter.setText(String.valueOf(value));
+    }
+
+
+    private void loadHistoryValueCoin(){
+        int value = preferencesCoin.getInt("money", 0);
+        updateNumCoin(value);
+    }
+
+    private void saveHistoryCoin(){
+        preferencesCoin.edit().putInt("money",  getIntValueCoin()).apply();
+    }
+    private int getIntValueCoin(){
+        return money;
+    }
+    private void updateNumCoin(int value){
+        money = value+1;
     }
 }

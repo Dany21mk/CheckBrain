@@ -2,9 +2,6 @@ package space.mosk.checkbrain;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,7 +13,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
 import space.mosk.checkbrain.Games.GameActivity;
-import space.mosk.checkbrain.Math.MathActivity;
+import space.mosk.checkbrain.MainGame.GameMainActivity;
 
 public class DashBoard extends AppCompatActivity {
 
@@ -81,11 +78,11 @@ public class DashBoard extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.shop:
-                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        startActivity(new Intent(getApplicationContext(), ShopActivity.class));
                         overridePendingTransition(0,0);
                         return true;
-                    case R.id.task:
-                        startActivity(new Intent(getApplicationContext(), AccountActivity.class));
+                    case R.id.game_main:
+                        startActivity(new Intent(getApplicationContext(), GameMainActivity.class));
                         overridePendingTransition(0,0);
                         return true;
                 }

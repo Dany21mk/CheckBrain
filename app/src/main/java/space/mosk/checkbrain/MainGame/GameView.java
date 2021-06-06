@@ -1,53 +1,60 @@
-package space.mosk.checkbrain.Games;
+package space.mosk.checkbrain.MainGame;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
 
+import androidx.annotation.NonNull;
+
 import java.util.concurrent.TimeUnit;
 
-public class Game3View extends SurfaceView implements SurfaceHolder.Callback, View.OnTouchListener {
+import space.mosk.checkbrain.MainGame.GameThread;
+import space.mosk.checkbrain.R;
 
-    private Game3Thread gameThread;
+public class GameView extends SurfaceView implements SurfaceHolder.Callback, View.OnTouchListener {
+
+    private GameThread gameThread;
 
     private SurfaceHolder holder;
 
-    public Game3View(Context context) {
+    public GameView(Context context) {
         super(context);
         init();
     }
 
+    public GameView(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        init();
+    }
 
-    private void init() {
+    private void init(){
         holder = getHolder();
         holder.addCallback(this);
         setOnTouchListener(this);
     }
 
-
     @Override
-    public void surfaceCreated(SurfaceHolder holder) {
+    public void surfaceCreated(@NonNull SurfaceHolder holder) {
         Canvas canvas = holder.lockCanvas();
-        canvas.drawColor(Color.WHITE);
+        canvas.drawColor(R.drawable.space);
         holder.unlockCanvasAndPost(canvas);
-        gameThread = new Game3Thread(holder);
+        gameThread = new GameThread(holder);
         gameThread.start();
     }
 
     @Override
-    public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
+    public void surfaceChanged(@NonNull SurfaceHolder holder, int format, int width, int height) {
 
     }
 
     @Override
-    public void surfaceDestroyed(SurfaceHolder holder) {
+    public void surfaceDestroyed(@NonNull SurfaceHolder holder) {
         gameThread.setRunning(false);
-        while (gameThread.isAlive()) {
+        while (gameThread.isAlive()){
             try {
                 TimeUnit.MILLISECONDS.sleep(100);
             } catch (InterruptedException e) {
@@ -56,7 +63,6 @@ public class Game3View extends SurfaceView implements SurfaceHolder.Callback, Vi
         }
     }
 
-
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         return super.onTouchEvent(event);
@@ -64,7 +70,6 @@ public class Game3View extends SurfaceView implements SurfaceHolder.Callback, Vi
 
     @Override
     public boolean onTouch(View v, MotionEvent event) {
-        gameThread.checkPos(event.getX(), event.getY());
-        return false;
+        return true;
     }
 }

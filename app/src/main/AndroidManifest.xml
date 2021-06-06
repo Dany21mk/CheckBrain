@@ -11,9 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CheckBrain">
-        <activity android:name=".Games.Game1Activity"></activity>
-        <activity android:name=".Games.Game2Activity"></activity>
-        <activity android:name=".Games.Game3Activity"></activity>
+        <activity android:name=".ShopActivity"></activity>
+        <activity android:name=".MainGame.GameMainActivity" />
+        <activity android:name=".Games.Game1Activity" />
+        <activity android:name=".Games.Game2Activity" />
+        <activity android:name=".Games.Game3Activity" />
         <activity android:name=".Person.PersonActivity" />
         <activity android:name=".Planets.PlanetsActivity" />
         <activity android:name=".Histrory.HisoryActivity" />
@@ -31,11 +33,41 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Geog.Level2GeogActivity" android:screenOrientation="portrait"><intent-filter><category android:name="android.intent.category.LAUNCHER" /></intent-filter></activity>
-        <activity android:name=".Geog.Level3GeogActivity" android:screenOrientation="portrait"><intent-filter><category android:name="android.intent.category.LAUNCHER" /></intent-filter></activity>
-        <activity android:name=".Geog.Level4GeogActivity" android:screenOrientation="portrait"><intent-filter><category android:name="android.intent.category.LAUNCHER" /></intent-filter></activity>
-        <activity android:name=".Geog.Level5GeogActivity" android:screenOrientation="portrait"><intent-filter><category android:name="android.intent.category.LAUNCHER" /></intent-filter></activity>
-        <activity android:name=".Geog.Level6GeogActivity" android:screenOrientation="portrait"><intent-filter><category android:name="android.intent.category.LAUNCHER" /></intent-filter></activity>
+        <activity
+            android:name=".Geog.Level2GeogActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Geog.Level3GeogActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Geog.Level4GeogActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Geog.Level5GeogActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Geog.Level6GeogActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".Planets.Level1PlanetsActivity"
             android:screenOrientation="portrait">

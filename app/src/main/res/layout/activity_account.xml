@@ -60,13 +60,13 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
                 android:layout_marginRight="10dp">
+
                 <TextView
-                    android:layout_width="wrap_content"
                     android:id="@+id/coin"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
-                    android:textSize="32sp"
-                    android:text="0"/>
+                    android:textSize="32sp" />
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"

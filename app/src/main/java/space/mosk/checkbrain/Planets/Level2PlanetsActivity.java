@@ -1,7 +1,9 @@
 package space.mosk.checkbrain.Planets;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -36,6 +38,10 @@ public class Level2PlanetsActivity extends AppCompatActivity {
     Random random = new Random();
     public int counter = 0, ans;
 
+    private int money = 0;
+
+    private SharedPreferences preferences;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +71,9 @@ public class Level2PlanetsActivity extends AppCompatActivity {
                 overridePendingTransition(0,0);
             }
         });
+
+        preferences = getSharedPreferences(getApplicationContext().getPackageName() + "_preferences", Context.MODE_PRIVATE);
+        loadHistoryValue();
 
         // Вызов dialog
         dialog = new Dialog(this);
@@ -280,6 +289,26 @@ public class Level2PlanetsActivity extends AppCompatActivity {
             }
         });
 
+        ImageView iv = dialog.findViewById(R.id.previewimg);
+        iv.setImageResource(R.drawable.coin_big);
+        updateNum(money);
+        saveHistory();
+
         dialog.show();
+    }
+
+    private void loadHistoryValue(){
+        int value = preferences.getInt("money", 0);
+        updateNum(value);
+    }
+
+    private void saveHistory(){
+        preferences.edit().putInt("money",  getIntValue()).apply();
+    }
+    private int getIntValue(){
+        return money;
+    }
+    private void updateNum(int value){
+        money = value+1;
     }
 }
