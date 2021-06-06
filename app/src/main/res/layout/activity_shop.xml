@@ -52,7 +52,7 @@
         <TextView
             android:id="@+id/heart_lives"
             android:layout_below="@id/app_bar"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAlignment="textEnd"
             android:textColor="#FD0303"
@@ -94,25 +94,29 @@
                 android:layout_width="wrap_content"
                 android:id="@+id/rocket1"
                 android:layout_height="wrap_content"
-                android:src="@drawable/rocket1"/>
+                android:src="@drawable/rocket1"
+                android:layout_marginRight="5dp"/>
 
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:id="@+id/rocket2"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/rocket2" />
+                    android:src="@drawable/rocket2"
+                    android:layout_marginRight="5dp"/>
 
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:id="@+id/rocket3"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/rocket3" />
+                    android:src="@drawable/rocket3"
+                    android:layout_marginRight="5dp"/>
 
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:id="@+id/rocket4"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/rocket4"/>
+                    android:src="@drawable/rocket4"
+                    android:layout_marginRight="5dp"/>
             </LinearLayout>
         </HorizontalScrollView>
         <HorizontalScrollView
@@ -125,7 +129,8 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:layout_marginRight="5dp">
                     <ImageButton
                         android:layout_width="wrap_content"
                         android:id="@+id/lives"
@@ -143,12 +148,14 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/patron1"
                     android:height="120dp"
+                    android:layout_marginRight="5dp"
                     android:text="100 Патронов\n 50"/>
                 <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/patron2"
                     android:height="120dp"
+                    android:layout_marginRight="5dp"
                     android:text="200 Патронов\n 70"/>
 
                 <androidx.appcompat.widget.AppCompatButton
@@ -156,6 +163,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/patron3"
                     android:height="120dp"
+                    android:layout_marginRight="5dp"
                     android:text="300 Патронов\n 90" />
 
                 <androidx.appcompat.widget.AppCompatButton
@@ -163,6 +171,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/patron4"
                     android:height="120dp"
+                    android:layout_marginRight="5dp"
                     android:text="600 Патронов\n 160" />
 
                 <androidx.appcompat.widget.AppCompatButton
@@ -175,24 +184,28 @@
                     android:layout_width="wrap_content"
                     android:height="120dp"
                     android:id="@+id/patron6"
+                    android:layout_marginRight="5dp"
                     android:layout_height="wrap_content"
                     android:text="1000 Патронов\n 200"/>
                 <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="wrap_content"
                     android:height="120dp"
                     android:id="@+id/patron7"
+                    android:layout_marginRight="5dp"
                     android:layout_height="wrap_content"
                     android:text="2000 Патронов\n 350"/>
                 <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="wrap_content"
                     android:height="120dp"
                     android:id="@+id/patron8"
+                    android:layout_marginRight="5dp"
                     android:layout_height="wrap_content"
                     android:text="3000 Патронов\n 450"/>
                 <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="wrap_content"
                     android:height="120dp"
                     android:id="@+id/patron9"
+                    android:layout_marginRight="5dp"
                     android:layout_height="wrap_content"
                     android:text="10000 Патронов\n 500"/>
             </LinearLayout>
